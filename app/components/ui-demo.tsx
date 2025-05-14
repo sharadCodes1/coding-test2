@@ -1,4 +1,4 @@
-import { Button } from "@shadcn/ui";
+import { Button } from "./ui/button";
 
 export default function UIDemo() {
   return (
