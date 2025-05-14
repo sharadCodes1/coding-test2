@@ -7,6 +7,8 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+import UIDemo from "../components/ui-demo";
+
 export default function Index() {
   return (
     <div className="flex h-screen items-center justify-center">
@@ -49,6 +51,7 @@ export default function Index() {
           </ul>
         </nav>
       </div>
+      <UIDemo />
     </div>
   );
 }
