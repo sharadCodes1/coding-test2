@@ -1,4 +1,3 @@
-
 import { json } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
 
@@ -7,9 +6,13 @@ export const action: ActionFunction = async ({ request }) => {
   const code = form.get('code') as string;
 
   try {
-    const result = eval(code); // Caution: unsafe in production
+    const result = eval(code); 
     return json({ result: String(result) });
   } catch (err) {
-    return json({ result: `Error: ${err.message}` });
+    let message = "Unknown error";
+    if (err instanceof Error) {
+      message = err.message;
+    }
+    return json({ result: `Error: ${message}` });
   }
 };
